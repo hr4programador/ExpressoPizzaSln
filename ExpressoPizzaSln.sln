@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressoPizza.WindowsForm", "ExpressoPizza\ExpressoPizza.WindowsForm.csproj", "{91ED9867-60D0-4BB2-B07F-A5AE0FBA90C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Dominio", "0 - Dominio", "{BA3E3784-5C3B-4F18-A84C-BDCFC1331C16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Apresentacao", "3 - Apresentacao", "{F3AC054E-69BA-42A2-8B31-A39EBF2AD0C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{4EDE8390-8E6D-41ED-9287-E72E5D387A4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Testes", "1 - Testes", "{11E1F27A-CA23-4E07-8AE5-0F2A47C24951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressoPizza.Testes", "ExpressoPizza.Testes\ExpressoPizza.Testes.csproj", "{6B425B5B-5CA4-4FA6-B5F1-3FD5EE0AED4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressoPizza.Infra.Data", "ExpressoPizza.Infra.Data\ExpressoPizza.Infra.Data.csproj", "{5BF41A2D-D461-44D4-B17E-777F5C2B97E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressoPizza.Dominio", "ExpressoPizza.Dominio\ExpressoPizza.Dominio.csproj", "{4C3F75AE-FC2B-44A2-8155-F846BC78E69E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91ED9867-60D0-4BB2-B07F-A5AE0FBA90C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91ED9867-60D0-4BB2-B07F-A5AE0FBA90C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91ED9867-60D0-4BB2-B07F-A5AE0FBA90C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91ED9867-60D0-4BB2-B07F-A5AE0FBA90C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B425B5B-5CA4-4FA6-B5F1-3FD5EE0AED4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B425B5B-5CA4-4FA6-B5F1-3FD5EE0AED4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B425B5B-5CA4-4FA6-B5F1-3FD5EE0AED4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B425B5B-5CA4-4FA6-B5F1-3FD5EE0AED4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF41A2D-D461-44D4-B17E-777F5C2B97E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF41A2D-D461-44D4-B17E-777F5C2B97E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF41A2D-D461-44D4-B17E-777F5C2B97E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF41A2D-D461-44D4-B17E-777F5C2B97E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3F75AE-FC2B-44A2-8155-F846BC78E69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3F75AE-FC2B-44A2-8155-F846BC78E69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3F75AE-FC2B-44A2-8155-F846BC78E69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3F75AE-FC2B-44A2-8155-F846BC78E69E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91ED9867-60D0-4BB2-B07F-A5AE0FBA90C1} = {F3AC054E-69BA-42A2-8B31-A39EBF2AD0C9}
+		{6B425B5B-5CA4-4FA6-B5F1-3FD5EE0AED4B} = {11E1F27A-CA23-4E07-8AE5-0F2A47C24951}
+		{5BF41A2D-D461-44D4-B17E-777F5C2B97E3} = {4EDE8390-8E6D-41ED-9287-E72E5D387A4E}
+		{4C3F75AE-FC2B-44A2-8155-F846BC78E69E} = {BA3E3784-5C3B-4F18-A84C-BDCFC1331C16}
+	EndGlobalSection
+EndGlobal
