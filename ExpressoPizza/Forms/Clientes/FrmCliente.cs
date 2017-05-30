@@ -23,6 +23,7 @@ namespace ExpressoPizza.Forms
         {
             InitializeComponent();
             GridClientes.AutoGenerateColumns = false;
+            ProcurarClientes();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +33,6 @@ namespace ExpressoPizza.Forms
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            Validar();
             SalvarCliente();
         }
 
@@ -43,24 +43,60 @@ namespace ExpressoPizza.Forms
         private void Validar()
         {
             if (string.IsNullOrEmpty(TxtNome.Text))
-                MessageBox.Show("Informe o nome do cliente");
+                throw new ArgumentException("Informe o nome");
 
             if (string.IsNullOrEmpty(TxtTelefone.Text))
-                MessageBox.Show("Informe o telefone do cliente");
+                throw new ArgumentException("Informe o telefone");
         }
 
         private void SalvarCliente()
         {
-            var cliente = new Cliente()
+            try
             {
-                Nome = TxtNome.Text,
-                Telefone = int.Parse(TxtTelefone.Text)
-            };
+                Validar();
 
-            ClienteRepositorio.Adicionar(cliente);
-            GridClientes.DataSource = ClienteRepositorio.ObterTodos();
+                var cliente = new Cliente()
+                {
+                    Nome = TxtNome.Text,
+                    Telefone = int.Parse(TxtTelefone.Text)
+                };
+
+                ClienteRepositorio.Adicionar(cliente);
+                ProcurarClientes();
+                LimparCampos();
+            }
+            catch (ArgumentException ae)
+            {
+                MessageBox.Show(ae.Message);
+            }
+            catch
+            {
+                MessageBox.Show("Os dados informados são inválidos");
+            }
+        }
+
+        private void ProcurarClientes()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = ClienteRepositorio.ObterTodos();
+            GridClientes.DataSource = source;
+        }
+
+        private void LimparCampos()
+        {
+            TxtNome.Clear();
+            TxtTelefone.Clear();
+            TxtNome.Focus();
         }
 
         #endregion "Métodos"
+
+        private void TxtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                SalvarCliente();
+            }
+        }
     }
 }

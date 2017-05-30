@@ -171,6 +171,7 @@
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             this.panel3.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             this.panel3.MouseHover += new System.EventHandler(this.Panel2_MouseHover);

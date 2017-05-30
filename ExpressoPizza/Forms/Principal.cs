@@ -103,5 +103,11 @@ namespace ExpressoPizza
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
         }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            FrmPizza frmPizza = new FrmPizza();
+            frmPizza.ShowDialog();
+        }
     }
 }

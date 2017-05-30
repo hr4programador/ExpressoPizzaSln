@@ -1,6 +1,7 @@
 ﻿using ExpressoPizza.Dominio.Entidades;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace ExpressoPizza.Infra.Data.Repositorio
 {
@@ -10,6 +11,7 @@ namespace ExpressoPizza.Infra.Data.Repositorio
 
         public void Adicionar(Cliente cliente)
         {
+            cliente.ClienteId = ObterMaxId();
             ClienteRepositorio.Clientes.Add(cliente);
         }
 
@@ -21,6 +23,19 @@ namespace ExpressoPizza.Infra.Data.Repositorio
         public List<Cliente> ObterTodos()
         {
             return ClienteRepositorio.Clientes;
+        }
+
+        public List<Cliente> ObterClientes(int numeroTelefone)
+        {
+            if (numeroTelefone == 0)
+                return ObterTodos();
+
+            return ClienteRepositorio.Clientes.Where(c => c.Telefone == numeroTelefone).ToList();
+        }
+
+        public int ObterMaxId()
+        {
+            return ClienteRepositorio.Clientes.Count() > 0 ? ClienteRepositorio.Clientes.Max(p => p.ClienteId) + 1 : 0;
         }
     }
 }

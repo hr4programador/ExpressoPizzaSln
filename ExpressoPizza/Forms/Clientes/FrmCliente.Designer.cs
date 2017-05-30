@@ -45,7 +45,7 @@
             this.TxtNome.Location = new System.Drawing.Point(2, 25);
             this.TxtNome.Name = "TxtNome";
             this.TxtNome.Size = new System.Drawing.Size(255, 20);
-            this.TxtNome.TabIndex = 12;
+            this.TxtNome.TabIndex = 1;
             // 
             // label2
             // 
@@ -62,7 +62,7 @@
             this.BtnConfirmar.Location = new System.Drawing.Point(2, 94);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.BtnConfirmar.TabIndex = 10;
+            this.BtnConfirmar.TabIndex = 3;
             this.BtnConfirmar.Text = "Salvar";
             this.BtnConfirmar.UseVisualStyleBackColor = true;
             this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
@@ -72,7 +72,7 @@
             this.BtnFechar.Location = new System.Drawing.Point(83, 94);
             this.BtnFechar.Name = "BtnFechar";
             this.BtnFechar.Size = new System.Drawing.Size(75, 23);
-            this.BtnFechar.TabIndex = 14;
+            this.BtnFechar.TabIndex = 4;
             this.BtnFechar.Text = "Fechar";
             this.BtnFechar.UseVisualStyleBackColor = true;
             this.BtnFechar.Click += new System.EventHandler(this.button1_Click);
@@ -82,7 +82,8 @@
             this.TxtTelefone.Location = new System.Drawing.Point(2, 68);
             this.TxtTelefone.Name = "TxtTelefone";
             this.TxtTelefone.Size = new System.Drawing.Size(207, 20);
-            this.TxtTelefone.TabIndex = 16;
+            this.TxtTelefone.TabIndex = 2;
+            this.TxtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefone_KeyPress);
             // 
             // label1
             // 

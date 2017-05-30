@@ -69,10 +69,10 @@
     <Compile Include="Forms\FrmPedidos.Designer.cs">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmPizza.cs">
+    <Compile Include="Forms\Pizza\FrmPizza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmPizza.Designer.cs">
+    <Compile Include="Forms\Pizza\FrmPizza.Designer.cs">
       <DependentUpon>FrmPizza.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Principal.cs">
@@ -101,7 +101,7 @@
     <EmbeddedResource Include="Forms\FrmPedidos.resx">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmPizza.resx">
+    <EmbeddedResource Include="Forms\Pizza\FrmPizza.resx">
       <DependentUpon>FrmPizza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal.resx">

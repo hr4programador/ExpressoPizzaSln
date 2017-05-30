@@ -30,14 +30,16 @@
         {
             this.Txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridItensPedido = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtNomeCliente = new System.Windows.Forms.TextBox();
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt
@@ -59,13 +61,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nº Pedido";
             // 
-            // dataGridView1
+            // GridItensPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 141);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(727, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.GridItensPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridItensPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.Preco});
+            this.GridItensPedido.Location = new System.Drawing.Point(12, 141);
+            this.GridItensPedido.Name = "GridItensPedido";
+            this.GridItensPedido.Size = new System.Drawing.Size(718, 150);
+            this.GridItensPedido.TabIndex = 2;
             // 
             // label2
             // 
@@ -77,14 +82,14 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Cliente";
             // 
-            // textBox1
+            // TxtNomeCliente
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(12, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 4;
+            this.TxtNomeCliente.Enabled = false;
+            this.TxtNomeCliente.Location = new System.Drawing.Point(12, 71);
+            this.TxtNomeCliente.Name = "TxtNomeCliente";
+            this.TxtNomeCliente.ReadOnly = true;
+            this.TxtNomeCliente.Size = new System.Drawing.Size(260, 20);
+            this.TxtNomeCliente.TabIndex = 4;
             // 
             // BtnProcurarCliente
             // 
@@ -113,6 +118,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button1
             // 
@@ -124,6 +130,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 380;
+            // 
+            // Preco
+            // 
+            this.Preco.DataPropertyName = "Preco";
+            this.Preco.HeaderText = "Preço";
+            this.Preco.Name = "Preco";
+            // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,9 +153,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnProcurarCliente);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtNomeCliente);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridItensPedido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -146,7 +165,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedidos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,12 +175,14 @@
 
         private System.Windows.Forms.TextBox Txt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridItensPedido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtNomeCliente;
         private System.Windows.Forms.Button BtnProcurarCliente;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
     }
 }

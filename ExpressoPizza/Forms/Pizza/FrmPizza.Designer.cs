@@ -1,6 +1,6 @@
 ﻿namespace ExpressoPizza.Forms
 {
-    partial class FrmItemPedido
+    partial class FrmPizza
     {
         /// <summary>
         /// Required designer variable.
@@ -28,64 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnConfirmar = new System.Windows.Forms.Button();
-            this.BtnProcurarCliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn = new System.Windows.Forms.Button();
+            this.BtnFechar = new System.Windows.Forms.Button();
             this.GridPizza = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtPreco = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridPizza)).BeginInit();
             this.SuspendLayout();
             // 
-            // BtnConfirmar
+            // label1
             // 
-            this.BtnConfirmar.Location = new System.Drawing.Point(3, 238);
-            this.BtnConfirmar.Name = "BtnConfirmar";
-            this.BtnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.BtnConfirmar.TabIndex = 2;
-            this.BtnConfirmar.Text = "Confirmar";
-            this.BtnConfirmar.UseVisualStyleBackColor = true;
-            this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
-            // 
-            // BtnProcurarCliente
-            // 
-            this.BtnProcurarCliente.Location = new System.Drawing.Point(334, 24);
-            this.BtnProcurarCliente.Name = "BtnProcurarCliente";
-            this.BtnProcurarCliente.Size = new System.Drawing.Size(72, 23);
-            this.BtnProcurarCliente.TabIndex = 8;
-            this.BtnProcurarCliente.Text = "Procurar";
-            this.BtnProcurarCliente.UseVisualStyleBackColor = true;
-            this.BtnProcurarCliente.Click += new System.EventHandler(this.BtnProcurarCliente_Click);
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(2, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome";
             // 
             // TxtNome
             // 
-            this.TxtNome.Location = new System.Drawing.Point(2, 25);
+            this.TxtNome.Location = new System.Drawing.Point(5, 25);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(326, 20);
-            this.TxtNome.TabIndex = 7;
-            this.TxtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNome_KeyPress);
+            this.TxtNome.Size = new System.Drawing.Size(393, 20);
+            this.TxtNome.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(2, 9);
+            this.label2.Location = new System.Drawing.Point(2, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Pizza";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Preço";
             // 
-            // button1
+            // Btn
             // 
-            this.button1.Location = new System.Drawing.Point(84, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn.Location = new System.Drawing.Point(109, 73);
+            this.Btn.Name = "Btn";
+            this.Btn.Size = new System.Drawing.Size(75, 23);
+            this.Btn.TabIndex = 5;
+            this.Btn.Text = "Salvar";
+            this.Btn.UseVisualStyleBackColor = true;
+            this.Btn.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnFechar
+            // 
+            this.BtnFechar.Location = new System.Drawing.Point(5, 256);
+            this.BtnFechar.Name = "BtnFechar";
+            this.BtnFechar.Size = new System.Drawing.Size(75, 23);
+            this.BtnFechar.TabIndex = 6;
+            this.BtnFechar.Text = "Fechar";
+            this.BtnFechar.UseVisualStyleBackColor = true;
+            this.BtnFechar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // GridPizza
             // 
@@ -93,17 +93,17 @@
             this.GridPizza.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.Preco});
-            this.GridPizza.Location = new System.Drawing.Point(2, 51);
+            this.GridPizza.Location = new System.Drawing.Point(5, 100);
             this.GridPizza.Name = "GridPizza";
-            this.GridPizza.Size = new System.Drawing.Size(522, 180);
-            this.GridPizza.TabIndex = 10;
+            this.GridPizza.Size = new System.Drawing.Size(527, 150);
+            this.GridPizza.TabIndex = 7;
             // 
             // Nome
             // 
             this.Nome.DataPropertyName = "Nome";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
-            this.Nome.Width = 370;
+            this.Nome.Width = 380;
             // 
             // Preco
             // 
@@ -111,25 +111,34 @@
             this.Preco.HeaderText = "Preço";
             this.Preco.Name = "Preco";
             // 
-            // FrmItemPedido
+            // TxtPreco
+            // 
+            this.TxtPreco.Location = new System.Drawing.Point(5, 74);
+            this.TxtPreco.Name = "TxtPreco";
+            this.TxtPreco.Size = new System.Drawing.Size(100, 20);
+            this.TxtPreco.TabIndex = 2;
+            this.TxtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPreco_KeyPress);
+            // 
+            // FrmPizza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(530, 273);
+            this.ClientSize = new System.Drawing.Size(538, 287);
+            this.Controls.Add(this.TxtPreco);
             this.Controls.Add(this.GridPizza);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.BtnProcurarCliente);
-            this.Controls.Add(this.TxtNome);
+            this.Controls.Add(this.BtnFechar);
+            this.Controls.Add(this.Btn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnConfirmar);
+            this.Controls.Add(this.TxtNome);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmItemPedido";
+            this.Name = "FrmPizza";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Itens Pedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Pizza";
             ((System.ComponentModel.ISupportInitialize)(this.GridPizza)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,13 +146,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button BtnConfirmar;
-        private System.Windows.Forms.Button BtnProcurarCliente;
+
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn;
+        private System.Windows.Forms.Button BtnFechar;
         private System.Windows.Forms.DataGridView GridPizza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
+        private System.Windows.Forms.TextBox TxtPreco;
     }
 }
