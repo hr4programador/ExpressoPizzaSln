@@ -63,10 +63,16 @@
     <Compile Include="Forms\FrmItemPedido.Designer.cs">
       <DependentUpon>FrmItemPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmPedidos.cs">
+    <Compile Include="Forms\Pedido\FrmPesquisarPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmPedidos.Designer.cs">
+    <Compile Include="Forms\Pedido\FrmPesquisarPedidos.Designer.cs">
+      <DependentUpon>FrmPesquisarPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pedido\FrmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pedido\FrmPedidos.Designer.cs">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Pizza\FrmPizza.cs">
@@ -98,7 +104,10 @@
     <EmbeddedResource Include="Forms\FrmItemPedido.resx">
       <DependentUpon>FrmItemPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmPedidos.resx">
+    <EmbeddedResource Include="Forms\Pedido\FrmPesquisarPedidos.resx">
+      <DependentUpon>FrmPesquisarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pedido\FrmPedidos.resx">
       <DependentUpon>FrmPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pizza\FrmPizza.resx">

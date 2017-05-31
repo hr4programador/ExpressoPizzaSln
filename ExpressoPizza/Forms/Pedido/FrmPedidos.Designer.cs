@@ -31,14 +31,17 @@
             this.Txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtNomeCliente = new System.Windows.Forms.TextBox();
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnSalvar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtAnotacoes = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +69,30 @@
             this.GridItensPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridItensPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
-            this.Preco});
+            this.Preco,
+            this.Deletar});
             this.GridItensPedido.Location = new System.Drawing.Point(12, 141);
             this.GridItensPedido.Name = "GridItensPedido";
             this.GridItensPedido.Size = new System.Drawing.Size(718, 150);
             this.GridItensPedido.TabIndex = 2;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 380;
+            // 
+            // Preco
+            // 
+            this.Preco.DataPropertyName = "Preco";
+            this.Preco.HeaderText = "Preço";
+            this.Preco.Name = "Preco";
+            // 
+            // Deletar
+            // 
+            this.Deletar.HeaderText = "Deletar";
+            this.Deletar.Name = "Deletar";
             // 
             // label2
             // 
@@ -101,18 +123,19 @@
             this.BtnProcurarCliente.UseVisualStyleBackColor = true;
             this.BtnProcurarCliente.Click += new System.EventHandler(this.BtnProcurarCliente_Click);
             // 
-            // button2
+            // BtnSalvar
             // 
-            this.button2.Location = new System.Drawing.Point(12, 297);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Fechar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Location = new System.Drawing.Point(12, 411);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(72, 23);
+            this.BtnSalvar.TabIndex = 8;
+            this.BtnSalvar.Text = "Salvar";
+            this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(90, 297);
+            this.button3.Location = new System.Drawing.Point(90, 411);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(72, 23);
             this.button3.TabIndex = 9;
@@ -130,27 +153,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Nome
+            // TxtAnotacoes
             // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 380;
+            this.TxtAnotacoes.Location = new System.Drawing.Point(12, 327);
+            this.TxtAnotacoes.Multiline = true;
+            this.TxtAnotacoes.Name = "TxtAnotacoes";
+            this.TxtAnotacoes.Size = new System.Drawing.Size(718, 71);
+            this.TxtAnotacoes.TabIndex = 10;
             // 
-            // Preco
+            // label3
             // 
-            this.Preco.DataPropertyName = "Preco";
-            this.Preco.HeaderText = "Preço";
-            this.Preco.Name = "Preco";
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 311);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Anotações";
             // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(742, 331);
+            this.ClientSize = new System.Drawing.Size(742, 451);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtAnotacoes);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnProcurarCliente);
             this.Controls.Add(this.TxtNomeCliente);
@@ -179,10 +209,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtNomeCliente;
         private System.Windows.Forms.Button BtnProcurarCliente;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
+        private System.Windows.Forms.DataGridViewButtonColumn Deletar;
+        private System.Windows.Forms.TextBox TxtAnotacoes;
+        private System.Windows.Forms.Label label3;
     }
 }
