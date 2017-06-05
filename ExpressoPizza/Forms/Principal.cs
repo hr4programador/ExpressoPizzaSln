@@ -70,8 +70,8 @@ namespace ExpressoPizza
 
         private void Panel2_Click(object sender, EventArgs e)
         {
-            FrmPedidos frmPedidos = new FrmPedidos();
-            frmPedidos.ShowDialog();
+            FrmPesquisarPedidos frmPesquisarPedidos = new FrmPesquisarPedidos();
+            frmPesquisarPedidos.ShowDialog();
         }
 
         private void Principal_Load(object sender, EventArgs e)

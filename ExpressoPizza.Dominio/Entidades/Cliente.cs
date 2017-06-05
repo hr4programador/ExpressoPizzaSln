@@ -8,6 +8,7 @@ namespace ExpressoPizza.Dominio.Entidades
         public string Nome { get; set; }
         public int Telefone { get; set; }
         public List<Pedido> Pedidos { get; set; }
+        public string Endereco { get; set; }
 
         public Cliente()
         {

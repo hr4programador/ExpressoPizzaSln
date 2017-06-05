@@ -19,6 +19,11 @@ namespace ExpressoPizza.Dominio.Entidades
         public FormaPagamento FormaPagamento { get; set; }
         public string Anotacoes { get; set; }
 
+        public string EnderecoCliente
+        {
+            get { return Cliente.Endereco; }
+        }
+
         public Pedido()
         {
             ItensPedido = new List<ItemPedido>();

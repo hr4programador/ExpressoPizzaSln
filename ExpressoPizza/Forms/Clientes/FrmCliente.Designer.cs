@@ -37,6 +37,8 @@
             this.GridClientes = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtEndereco = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@
             this.BtnConfirmar.Location = new System.Drawing.Point(2, 94);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.BtnConfirmar.TabIndex = 3;
+            this.BtnConfirmar.TabIndex = 4;
             this.BtnConfirmar.Text = "Salvar";
             this.BtnConfirmar.UseVisualStyleBackColor = true;
             this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
@@ -72,16 +74,16 @@
             this.BtnFechar.Location = new System.Drawing.Point(83, 94);
             this.BtnFechar.Name = "BtnFechar";
             this.BtnFechar.Size = new System.Drawing.Size(75, 23);
-            this.BtnFechar.TabIndex = 4;
+            this.BtnFechar.TabIndex = 5;
             this.BtnFechar.Text = "Fechar";
             this.BtnFechar.UseVisualStyleBackColor = true;
             this.BtnFechar.Click += new System.EventHandler(this.button1_Click);
             // 
             // TxtTelefone
             // 
-            this.TxtTelefone.Location = new System.Drawing.Point(2, 68);
+            this.TxtTelefone.Location = new System.Drawing.Point(265, 25);
             this.TxtTelefone.Name = "TxtTelefone";
-            this.TxtTelefone.Size = new System.Drawing.Size(207, 20);
+            this.TxtTelefone.Size = new System.Drawing.Size(114, 20);
             this.TxtTelefone.TabIndex = 2;
             this.TxtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefone_KeyPress);
             // 
@@ -89,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(2, 52);
+            this.label1.Location = new System.Drawing.Point(265, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 15;
@@ -120,12 +122,32 @@
             this.Telefone.HeaderText = "Telefone";
             this.Telefone.Name = "Telefone";
             // 
+            // TxtEndereco
+            // 
+            this.TxtEndereco.Location = new System.Drawing.Point(2, 65);
+            this.TxtEndereco.Name = "TxtEndereco";
+            this.TxtEndereco.Size = new System.Drawing.Size(377, 20);
+            this.TxtEndereco.TabIndex = 3;
+            this.TxtEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEndereco_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(2, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Endereço";
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(538, 348);
+            this.Controls.Add(this.TxtEndereco);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.GridClientes);
             this.Controls.Add(this.TxtTelefone);
             this.Controls.Add(this.label1);
@@ -156,5 +178,7 @@
         private System.Windows.Forms.DataGridView GridClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.TextBox TxtEndereco;
+        private System.Windows.Forms.Label label3;
     }
 }

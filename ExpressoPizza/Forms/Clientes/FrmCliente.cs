@@ -58,7 +58,8 @@ namespace ExpressoPizza.Forms
                 var cliente = new Cliente()
                 {
                     Nome = TxtNome.Text,
-                    Telefone = int.Parse(TxtTelefone.Text)
+                    Telefone = int.Parse(TxtTelefone.Text),
+                    Endereco = TxtEndereco.Text
                 };
 
                 ClienteRepositorio.Adicionar(cliente);
@@ -86,12 +87,21 @@ namespace ExpressoPizza.Forms
         {
             TxtNome.Clear();
             TxtTelefone.Clear();
+            TxtEndereco.Clear();
             TxtNome.Focus();
         }
 
         #endregion "Métodos"
 
         private void TxtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                SalvarCliente();
+            }
+        }
+
+        private void TxtEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Keys)e.KeyChar == Keys.Enter)
             {
