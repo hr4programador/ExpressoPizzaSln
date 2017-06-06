@@ -18,6 +18,7 @@ namespace ExpressoPizza.Forms
         {
             InitializeComponent();
             GridPizza.AutoGenerateColumns = false;
+            ProcurarPizza();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -42,9 +43,7 @@ namespace ExpressoPizza.Forms
                 };
 
                 PizzaRepositorio.Adicionar(pizza);
-                BindingSource source = new BindingSource();
-                source.DataSource = PizzaRepositorio.ObterTodos();
-                GridPizza.DataSource = source;
+                ProcurarPizza();
                 LimparCampos();
             }
             catch (ArgumentException ae)
@@ -55,6 +54,13 @@ namespace ExpressoPizza.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ProcurarPizza()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = PizzaRepositorio.ObterTodos();
+            GridPizza.DataSource = source;
         }
 
         private void LimparCampos()

@@ -17,6 +17,7 @@ namespace ExpressoPizza.Dominio.Entidades
 
         public void AdicionarPedido(Pedido pedido)
         {
+            pedido.Cliente = this;
             Pedidos.Add(pedido);
         }
     }

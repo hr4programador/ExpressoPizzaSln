@@ -47,6 +47,9 @@ namespace ExpressoPizza.Forms
 
             if (string.IsNullOrEmpty(TxtTelefone.Text))
                 throw new ArgumentException("Informe o telefone");
+
+            if (string.IsNullOrEmpty(TxtEndereco.Text))
+                throw new ArgumentException("Informe o endereço do cliente");
         }
 
         private void SalvarCliente()

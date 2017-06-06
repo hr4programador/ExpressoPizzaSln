@@ -36,7 +36,7 @@ namespace ExpressoPizza.Infra.Data.Repositorio
         public IEnumerable<Cliente> ObterClientesComPedidos(int numeroTelefone)
         {
             if (numeroTelefone == 0)
-                ClienteRepositorio.Clientes.Where(c => c.Pedidos.Any()).ToList();
+                return ClienteRepositorio.Clientes.Where(c => c.Pedidos.Any());
 
             return ClienteRepositorio.Clientes.Where(c => c.Telefone == numeroTelefone && c.Pedidos.Any());
         }

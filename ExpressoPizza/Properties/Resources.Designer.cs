@@ -94,6 +94,16 @@ namespace ExpressoPizza.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon4 {
+            get {
+                object obj = ResourceManager.GetObject("icon4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sotto_Sopra_Open_Pizza_Oven_5_high_res {
             get {
                 object obj = ResourceManager.GetObject("Sotto-Sopra-Open-Pizza-Oven-5-high-res", resourceCulture);

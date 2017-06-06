@@ -116,6 +116,7 @@
             // 
             // FormaPagamento
             // 
+            this.FormaPagamento.DataPropertyName = "FormaPagamento";
             this.FormaPagamento.HeaderText = "Forma De Pagamento";
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.Width = 150;

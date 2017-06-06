@@ -35,6 +35,11 @@ namespace ExpressoPizza.Dominio.Entidades
             ItensPedido.Add(itemPedido);
         }
 
+        public void RemoverItemPedido(Pizza pizza)
+        {
+            ItensPedido.RemoveAll(i => i.Pizza.PizzaId == pizza.PizzaId);
+        }
+
         public decimal ObterValorTotal()
         {
             return ItensPedido.Sum(i => i.Pizza.Preco);

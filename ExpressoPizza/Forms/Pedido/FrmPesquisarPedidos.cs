@@ -113,6 +113,7 @@ namespace ExpressoPizza.Forms
         {
             FrmPedidos frmPedidos = new FrmPedidos();
             frmPedidos.ShowDialog();
+            ProcurarCliente();
         }
 
         private void TxtTelefoneCliente_KeyPress(object sender, KeyPressEventArgs e)

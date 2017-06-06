@@ -31,9 +31,6 @@
             this.Txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtNomeCliente = new System.Windows.Forms.TextBox();
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
@@ -42,6 +39,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.TxtAnotacoes = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,24 +75,8 @@
             this.GridItensPedido.Name = "GridItensPedido";
             this.GridItensPedido.Size = new System.Drawing.Size(718, 150);
             this.GridItensPedido.TabIndex = 2;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 380;
-            // 
-            // Preco
-            // 
-            this.Preco.DataPropertyName = "Preco";
-            this.Preco.HeaderText = "Preço";
-            this.Preco.Name = "Preco";
-            // 
-            // Deletar
-            // 
-            this.Deletar.HeaderText = "Deletar";
-            this.Deletar.Name = "Deletar";
+            this.GridItensPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridItensPedido_CellClick);
+            this.GridItensPedido.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridItensPedido_CellPainting);
             // 
             // label2
             // 
@@ -171,6 +155,25 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Anotações";
             // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 380;
+            // 
+            // Preco
+            // 
+            this.Preco.DataPropertyName = "Preco";
+            this.Preco.HeaderText = "Preço";
+            this.Preco.Name = "Preco";
+            // 
+            // Deletar
+            // 
+            this.Deletar.HeaderText = "";
+            this.Deletar.Name = "Deletar";
+            this.Deletar.Width = 25;
+            // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,10 +215,10 @@
         private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TxtAnotacoes;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
         private System.Windows.Forms.DataGridViewButtonColumn Deletar;
-        private System.Windows.Forms.TextBox TxtAnotacoes;
-        private System.Windows.Forms.Label label3;
     }
 }

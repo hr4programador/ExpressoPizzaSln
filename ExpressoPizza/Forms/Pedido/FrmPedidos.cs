@@ -34,6 +34,7 @@ namespace ExpressoPizza.Forms
         public FrmPedidos()
         {
             InitializeComponent();
+            GridItensPedido.AutoGenerateColumns = false;
         }
 
         private void BtnProcurarCliente_Click(object sender, EventArgs e)
@@ -93,19 +94,17 @@ namespace ExpressoPizza.Forms
         private void SalvarPedido()
         {
             Validar();
-            var pedido = new Pedido()
-            {
-                DataPedido = DateTime.Now,
-                Cliente = this.Cliente,
-                Anotacoes = TxtAnotacoes.Text
-            };
+
+            Pedido.DataPedido = DateTime.Now;
+            Pedido.Anotacoes = TxtAnotacoes.Text;
 
             foreach (DataGridViewRow item in GridItensPedido.Rows)
             {
                 var pizza = (item.DataBoundItem as Pizza);
-                pedido.AdicionarItemPedido(new ItemPedido() { Pizza = pizza });
+                Pedido.AdicionarItemPedido(new ItemPedido() { Pizza = pizza });
             }
-            PedidoRepositorio.Adicionar(pedido);
+            Cliente.AdicionarPedido(Pedido);
+            Close();
         }
 
         private void Validar()
@@ -115,6 +114,39 @@ namespace ExpressoPizza.Forms
 
             if (PizzaSelecionadas.Count == 0)
                 throw new ArgumentException("Adicione pelo menos um item");
+        }
+
+        private void GridItensPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == GridItensPedido.NewRowIndex || e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == GridItensPedido.Columns["Deletar"].Index)
+            {
+                if (MessageBox.Show("Deseja realmente deletar este item ?", "Confirmar...", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var pizza = GridItensPedido.Rows[e.RowIndex].DataBoundItem as Pizza;
+                    Pedido.RemoverItemPedido(pizza);
+                    ProcurarPizza();
+                }
+            }
+        }
+
+        private void GridItensPedido_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == GridItensPedido.NewRowIndex || e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == GridItensPedido.Columns["Deletar"].Index)
+            {
+                var iconDelete = Properties.Resources.icon4;
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var x = e.CellBounds.Left + (e.CellBounds.Width - iconDelete.Width) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - iconDelete.Height) / 2;
+                e.Graphics.DrawImage(iconDelete, new System.Drawing.Point(x, y));
+
+                e.Handled = true;
+            }
         }
     }
 }
