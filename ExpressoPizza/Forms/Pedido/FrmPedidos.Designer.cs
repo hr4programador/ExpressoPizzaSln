@@ -31,6 +31,9 @@
             this.Txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtNomeCliente = new System.Windows.Forms.TextBox();
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
@@ -39,9 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.TxtAnotacoes = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cboFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +80,25 @@
             this.GridItensPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridItensPedido_CellClick);
             this.GridItensPedido.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridItensPedido_CellPainting);
             // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 380;
+            // 
+            // Preco
+            // 
+            this.Preco.DataPropertyName = "Preco";
+            this.Preco.HeaderText = "Preço";
+            this.Preco.Name = "Preco";
+            // 
+            // Deletar
+            // 
+            this.Deletar.HeaderText = "";
+            this.Deletar.Name = "Deletar";
+            this.Deletar.Width = 25;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -109,7 +130,7 @@
             // 
             // BtnSalvar
             // 
-            this.BtnSalvar.Location = new System.Drawing.Point(12, 411);
+            this.BtnSalvar.Location = new System.Drawing.Point(12, 456);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(72, 23);
             this.BtnSalvar.TabIndex = 8;
@@ -119,7 +140,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(90, 411);
+            this.button3.Location = new System.Drawing.Point(90, 456);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(72, 23);
             this.button3.TabIndex = 9;
@@ -139,7 +160,7 @@
             // 
             // TxtAnotacoes
             // 
-            this.TxtAnotacoes.Location = new System.Drawing.Point(12, 327);
+            this.TxtAnotacoes.Location = new System.Drawing.Point(12, 372);
             this.TxtAnotacoes.Multiline = true;
             this.TxtAnotacoes.Name = "TxtAnotacoes";
             this.TxtAnotacoes.Size = new System.Drawing.Size(718, 71);
@@ -149,37 +170,41 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 311);
+            this.label3.Location = new System.Drawing.Point(12, 356);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Anotações";
             // 
-            // Nome
+            // cboFormaPagamento
             // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 380;
+            this.cboFormaPagamento.FormattingEnabled = true;
+            this.cboFormaPagamento.Items.AddRange(new object[] {
+            "Dinheiro",
+            "Cartão"});
+            this.cboFormaPagamento.Location = new System.Drawing.Point(15, 319);
+            this.cboFormaPagamento.Name = "cboFormaPagamento";
+            this.cboFormaPagamento.Size = new System.Drawing.Size(147, 21);
+            this.cboFormaPagamento.TabIndex = 12;
             // 
-            // Preco
+            // label4
             // 
-            this.Preco.DataPropertyName = "Preco";
-            this.Preco.HeaderText = "Preço";
-            this.Preco.Name = "Preco";
-            // 
-            // Deletar
-            // 
-            this.Deletar.HeaderText = "";
-            this.Deletar.Name = "Deletar";
-            this.Deletar.Width = 25;
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 303);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Forma Pagamento";
             // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(742, 451);
+            this.ClientSize = new System.Drawing.Size(742, 508);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cboFormaPagamento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtAnotacoes);
             this.Controls.Add(this.button3);
@@ -220,5 +245,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
         private System.Windows.Forms.DataGridViewButtonColumn Deletar;
+        private System.Windows.Forms.ComboBox cboFormaPagamento;
+        private System.Windows.Forms.Label label4;
     }
 }

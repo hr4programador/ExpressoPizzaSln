@@ -97,13 +97,16 @@ namespace ExpressoPizza.Forms
 
             Pedido.DataPedido = DateTime.Now;
             Pedido.Anotacoes = TxtAnotacoes.Text;
+            Pedido.FormaPagamento = cboFormaPagamento.SelectedText;
 
             foreach (DataGridViewRow item in GridItensPedido.Rows)
             {
                 var pizza = (item.DataBoundItem as Pizza);
                 Pedido.AdicionarItemPedido(new ItemPedido() { Pizza = pizza });
             }
+            PedidoRepositorio.Adicionar(Pedido);
             Cliente.AdicionarPedido(Pedido);
+
             Close();
         }
 
@@ -114,6 +117,9 @@ namespace ExpressoPizza.Forms
 
             if (PizzaSelecionadas.Count == 0)
                 throw new ArgumentException("Adicione pelo menos um item");
+
+            if (cboFormaPagamento.SelectedIndex == -1)
+                throw new ArgumentException("Informe a forma de pagamento");
         }
 
         private void GridItensPedido_CellClick(object sender, DataGridViewCellEventArgs e)

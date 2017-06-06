@@ -168,13 +168,22 @@
     <None Include="Resources\Icon_delete.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

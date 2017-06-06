@@ -65,7 +65,7 @@ namespace ExpressoPizza.Forms
             int numeroTelefone;
             int.TryParse(TxtTelefoneCliente.Text, out numeroTelefone);
             var source = new BindingSource();
-            source.DataSource = ClienteRepositorio.ObterClientesComPedidos(numeroTelefone);
+            source.DataSource = ClienteRepositorio.ObterTodosPedidos(numeroTelefone);
             GridItensPedido.DataSource = source;
         }
 
@@ -120,6 +120,34 @@ namespace ExpressoPizza.Forms
         {
             if ((Keys)e.KeyChar == Keys.Enter)
                 ProcurarCliente();
+        }
+
+        private void GridItensPedido_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == GridItensPedido.NewRowIndex || e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == GridItensPedido.Columns["View"].Index)
+            {
+                var iconDelete = Properties.Resources.view5;
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var x = e.CellBounds.Left + (e.CellBounds.Width - iconDelete.Width) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - iconDelete.Height) / 2;
+                e.Graphics.DrawImage(iconDelete, new System.Drawing.Point(x, y));
+
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex == GridItensPedido.Columns["Edit"].Index)
+            {
+                //var iconDelete = Properties.Resources.view5;
+                //e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                //var x = e.CellBounds.Left + (e.CellBounds.Width - iconDelete.Width) / 2;
+                //var y = e.CellBounds.Top + (e.CellBounds.Height - iconDelete.Height) / 2;
+                //e.Graphics.DrawImage(iconDelete, new System.Drawing.Point(x, y));
+
+                //e.Handled = true;
+            }
         }
     }
 }

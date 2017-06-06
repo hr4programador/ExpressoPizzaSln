@@ -41,6 +41,14 @@ namespace ExpressoPizza.Infra.Data.Repositorio
             return ClienteRepositorio.Clientes.Where(c => c.Telefone == numeroTelefone && c.Pedidos.Any());
         }
 
+        public IEnumerable<Pedido> ObterTodosPedidos(int numeroTelefone)
+        {
+            if (numeroTelefone == 0)
+                return ClienteRepositorio.Clientes.SelectMany(c => c.Pedidos);
+
+            return ClienteRepositorio.Clientes.Where(c => c.Telefone == numeroTelefone && c.Pedidos.Any()).SelectMany(c => c.Pedidos);
+        }
+
         public int ObterMaxId()
         {
             return ClienteRepositorio.Clientes.Count() > 0 ? ClienteRepositorio.Clientes.Max(p => p.ClienteId) + 1 : 0;
