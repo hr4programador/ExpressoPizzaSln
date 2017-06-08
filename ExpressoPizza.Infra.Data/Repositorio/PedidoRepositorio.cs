@@ -35,7 +35,7 @@ namespace ExpressoPizza.Infra.Data.Repositorio
 
         public int ObterMaxId()
         {
-            return PedidoRepositorio.Pedidos.Count() > 0 ? PedidoRepositorio.Pedidos.Max(p => p.PedidoId) + 1 : 0;
+            return PedidoRepositorio.Pedidos.Count() > 0 ? PedidoRepositorio.Pedidos.Max(p => p.PedidoId) + 1 : 1;
         }
     }
 }

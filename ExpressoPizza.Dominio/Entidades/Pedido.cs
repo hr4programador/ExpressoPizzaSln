@@ -4,24 +4,24 @@ using System.Linq;
 
 namespace ExpressoPizza.Dominio.Entidades
 {
-    public enum FormaPagamento
-    {
-        Cartao,
-        Dinheiro
-    }
-
     public class Pedido
     {
         public int PedidoId { get; set; }
         public DateTime DataPedido { get; set; }
         public List<ItemPedido> ItensPedido { get; set; }
         public Cliente Cliente { get; set; }
-        public FormaPagamento FormaPagamento { get; set; }
+        public string FormaPagamento { get; set; }
+        public string Situacao { get; set; }
         public string Anotacoes { get; set; }
 
         public string EnderecoCliente
         {
             get { return Cliente.Endereco; }
+        }
+
+        public int NumeroTelefoneCliente
+        {
+            get { return Cliente.Telefone; }
         }
 
         public Pedido()
