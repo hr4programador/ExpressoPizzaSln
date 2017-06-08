@@ -2,12 +2,20 @@
 using ExpressoPizza.Infra.Data.Repositorio;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ExpressoPizza.Forms
 {
+    public enum ModoAcesso
+    {
+        Cadastro,
+        Edicao
+    }
+
     public partial class FrmPedidos : Form
     {
+        public ModoAcesso ModoAcesso;
         private PedidoRepositorio pedidoRepositorio;
 
         public PedidoRepositorio PedidoRepositorio
@@ -20,6 +28,7 @@ namespace ExpressoPizza.Forms
         public List<Pizza> PizzaSelecionadas
         {
             get { return pizzaSelecionadas ?? (pizzaSelecionadas = new List<Pizza>()); }
+            set { pizzaSelecionadas = value; }
         }
 
         private Cliente Cliente { get; set; }
@@ -29,12 +38,35 @@ namespace ExpressoPizza.Forms
         public Pedido Pedido
         {
             get { return pedido ?? (pedido = new Pedido()); }
+            set { pedido = value; }
+        }
+
+        public FrmPedidos(Pedido pedido)
+        {
+            InitializeComponent();
+            Pedido = pedido;
+            ModoAcesso = ModoAcesso.Edicao;
+            GridItensPedido.AutoGenerateColumns = false;
+            CarregarCampos();
         }
 
         public FrmPedidos()
         {
             InitializeComponent();
-            GridItensPedido.AutoGenerateColumns = false;
+            ModoAcesso = ModoAcesso.Cadastro;
+        }
+
+        private void CarregarCampos()
+        {
+            TxtNumeroPedido.Text = Pedido.PedidoId.ToString();
+            TxtNomeCliente.Text = Pedido.Cliente.Nome;
+
+            PizzaSelecionadas = Pedido.ItensPedido.Select(i => i.Pizza).ToList();
+            BindingSource source = new BindingSource();
+            source.DataSource = PizzaSelecionadas;
+            GridItensPedido.DataSource = source;
+            cboFormaPagamento.SelectedItem = Pedido.FormaPagamento;
+            TxtAnotacoes.Text = Pedido.Anotacoes;
         }
 
         private void BtnProcurarCliente_Click(object sender, EventArgs e)
@@ -97,15 +129,20 @@ namespace ExpressoPizza.Forms
 
             Pedido.DataPedido = DateTime.Now;
             Pedido.Anotacoes = TxtAnotacoes.Text;
-            Pedido.FormaPagamento = cboFormaPagamento.SelectedText;
+            Pedido.FormaPagamento = cboFormaPagamento.SelectedItem.ToString();
+            Pedido.Situacao = "Cadastrado";
 
+            Pedido.ItensPedido.Clear();
             foreach (DataGridViewRow item in GridItensPedido.Rows)
             {
                 var pizza = (item.DataBoundItem as Pizza);
                 Pedido.AdicionarItemPedido(new ItemPedido() { Pizza = pizza });
             }
-            PedidoRepositorio.Adicionar(Pedido);
-            Cliente.AdicionarPedido(Pedido);
+            if (ModoAcesso == ModoAcesso.Cadastro)
+            {
+                PedidoRepositorio.Adicionar(Pedido);
+                Cliente.AdicionarPedido(Pedido);
+            }
 
             Close();
         }

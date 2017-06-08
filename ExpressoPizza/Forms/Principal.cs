@@ -1,5 +1,6 @@
 ﻿using ExpressoPizza.Dominio;
 using ExpressoPizza.Forms;
+using ExpressoPizza.Infra.Data.Repositorio;
 using System;
 using System.Globalization;
 using System.Threading;
@@ -20,6 +21,8 @@ namespace ExpressoPizza
         {
             InitializeComponent();
             Principal.Usuario = new Usuario();
+            var r = new Repositorio();
+            r.CargaInicial();
         }
 
         private void Panel1_MouseHover(object sender, EventArgs e)
@@ -63,8 +66,7 @@ namespace ExpressoPizza
             {
                 FrmLogin frmLogin = new FrmLogin();
                 frmLogin.ShowDialog();
-                statusStrip.Text = "Olá " + Usuario.Nome;
-                statusStrip.Refresh();
+                stripUsuario.Text = frmLogin.ObterMensagem();
             }
         }
 
@@ -86,7 +88,7 @@ namespace ExpressoPizza
             var primeiraLetra = diaDaSemana.Substring(0, 1);
             var restante = diaDaSemana.Substring(1, lblDiaSemana.Text.Length);
             diaDaSemana = primeiraLetra.ToUpper() + restante;
-            lblDiaSemana.Text = diaDaSemana;
+            lblDiaSemana.Text = diaDaSemana.Replace("-", "");
             lblDiaMes.Text = dt.Day.ToString();
         }
 

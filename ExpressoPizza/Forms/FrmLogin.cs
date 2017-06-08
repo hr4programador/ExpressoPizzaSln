@@ -70,5 +70,10 @@ namespace ExpressoPizza
                 txtSenha.Focus();
             }
         }
+
+        public string ObterMensagem()
+        {
+            return "Usuário: " + txtUsuario.Text + " Logado !";
+        }
     }
 }

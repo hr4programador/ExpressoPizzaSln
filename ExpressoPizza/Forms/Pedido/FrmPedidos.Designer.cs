@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Txt = new System.Windows.Forms.TextBox();
+            this.TxtNumeroPedido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,17 +44,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cboFormaPagamento = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.BtnPedidoEntregue = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.SuspendLayout();
             // 
-            // Txt
+            // TxtNumeroPedido
             // 
-            this.Txt.Enabled = false;
-            this.Txt.Location = new System.Drawing.Point(12, 26);
-            this.Txt.Name = "Txt";
-            this.Txt.ReadOnly = true;
-            this.Txt.Size = new System.Drawing.Size(100, 20);
-            this.Txt.TabIndex = 0;
+            this.TxtNumeroPedido.Enabled = false;
+            this.TxtNumeroPedido.Location = new System.Drawing.Point(12, 26);
+            this.TxtNumeroPedido.Name = "TxtNumeroPedido";
+            this.TxtNumeroPedido.ReadOnly = true;
+            this.TxtNumeroPedido.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumeroPedido.TabIndex = 0;
             // 
             // label1
             // 
@@ -197,12 +198,22 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Forma Pagamento";
             // 
+            // BtnPedidoEntregue
+            // 
+            this.BtnPedidoEntregue.Location = new System.Drawing.Point(165, 456);
+            this.BtnPedidoEntregue.Name = "BtnPedidoEntregue";
+            this.BtnPedidoEntregue.Size = new System.Drawing.Size(107, 23);
+            this.BtnPedidoEntregue.TabIndex = 14;
+            this.BtnPedidoEntregue.Text = "Finalizar Pedido";
+            this.BtnPedidoEntregue.UseVisualStyleBackColor = true;
+            // 
             // FrmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(742, 508);
+            this.Controls.Add(this.BtnPedidoEntregue);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboFormaPagamento);
             this.Controls.Add(this.label3);
@@ -215,7 +226,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.GridItensPedido);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Txt);
+            this.Controls.Add(this.TxtNumeroPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -231,7 +242,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Txt;
+        private System.Windows.Forms.TextBox TxtNumeroPedido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView GridItensPedido;
         private System.Windows.Forms.Label label2;
@@ -247,5 +258,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Deletar;
         private System.Windows.Forms.ComboBox cboFormaPagamento;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnPedidoEntregue;
     }
 }

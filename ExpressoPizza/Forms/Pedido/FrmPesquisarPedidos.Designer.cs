@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
             this.BtnProcurarCliente = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
@@ -40,7 +39,6 @@
             this.NumeroTelefoneCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EnderecoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Visualizar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +52,6 @@
             this.NumeroTelefoneCliente,
             this.EnderecoCliente,
             this.FormaPagamento,
-            this.Visualizar,
             this.Editar});
             this.GridItensPedido.Location = new System.Drawing.Point(12, 67);
             this.GridItensPedido.Name = "GridItensPedido";
@@ -143,16 +140,6 @@
             this.FormaPagamento.Name = "FormaPagamento";
             this.FormaPagamento.Width = 150;
             // 
-            // Visualizar
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.Visualizar.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Visualizar.HeaderText = "";
-            this.Visualizar.Name = "Visualizar";
-            this.Visualizar.Text = "Visualizar";
-            this.Visualizar.UseColumnTextForButtonValue = true;
-            this.Visualizar.Width = 60;
-            // 
             // Editar
             // 
             this.Editar.HeaderText = "";
@@ -198,7 +185,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroTelefoneCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
-        private System.Windows.Forms.DataGridViewButtonColumn Visualizar;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

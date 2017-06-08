@@ -15,9 +15,9 @@ namespace ExpressoPizza.Infra.Data.Repositorio
             PedidoRepositorio.Pedidos.Add(pedido);
         }
 
-        public Pedido Obter(int pedidoId)
+        public Pedido Obter(Pedido pedido)
         {
-            return PedidoRepositorio.Pedidos.FirstOrDefault(i => i.PedidoId == pedidoId);
+            return PedidoRepositorio.Pedidos.FirstOrDefault(i => i.PedidoId == pedido.PedidoId);
         }
 
         public List<Pedido> ObterTodos()

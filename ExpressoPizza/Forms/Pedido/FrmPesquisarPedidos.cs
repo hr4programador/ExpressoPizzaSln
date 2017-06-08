@@ -122,31 +122,16 @@ namespace ExpressoPizza.Forms
                 ProcurarCliente();
         }
 
-        private void GridItensPedido_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void GridItensPedido_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == GridItensPedido.NewRowIndex || e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == GridItensPedido.Columns["View"].Index)
+            if (e.ColumnIndex == GridItensPedido.Columns["Editar"].Index)
             {
-                var iconDelete = Properties.Resources.view5;
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var x = e.CellBounds.Left + (e.CellBounds.Width - iconDelete.Width) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - iconDelete.Height) / 2;
-                e.Graphics.DrawImage(iconDelete, new System.Drawing.Point(x, y));
-
-                e.Handled = true;
-            }
-
-            if (e.ColumnIndex == GridItensPedido.Columns["Edit"].Index)
-            {
-                //var iconDelete = Properties.Resources.view5;
-                //e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                //var x = e.CellBounds.Left + (e.CellBounds.Width - iconDelete.Width) / 2;
-                //var y = e.CellBounds.Top + (e.CellBounds.Height - iconDelete.Height) / 2;
-                //e.Graphics.DrawImage(iconDelete, new System.Drawing.Point(x, y));
-
-                //e.Handled = true;
+                var pedido = GridItensPedido.Rows[e.RowIndex].DataBoundItem as Pedido;
+                FrmPedidos frmPedido = new FrmPedidos(pedido);
+                frmPedido.ShowDialog();
             }
         }
     }
